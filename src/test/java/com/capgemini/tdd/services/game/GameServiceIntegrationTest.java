@@ -37,13 +37,13 @@ public class GameServiceIntegrationTest
 
         //when
         long boardId = boardBE.getId();
-        gameService.makeMove(boardId, 0L, 0L, "Adam", "X");
-        gameService.makeMove(boardId, 2L, 0L, "Kasztan", "O");
+        gameService.makeMove(boardId, 0L, 0L, "Adam", "O");
+        gameService.makeMove(boardId, 2L, 0L, "Kasztan", "X");
 
-        gameService.makeMove(boardId, 0L, 1L, "Adam", "X");
-        BoardStatusEnum tempBoardStatusEnum = gameService.makeMove(boardId, 2L, 1L, "Kasztan", "O");
+        gameService.makeMove(boardId, 0L, 1L, "Adam", "O");
+        BoardStatusEnum tempBoardStatusEnum = gameService.makeMove(boardId, 2L, 1L, "Kasztan", "X");
 
-        BoardStatusEnum finalBoardStatusEnum = gameService.makeMove(boardId, 0L, 2L, "Adam", "X");
+        BoardStatusEnum finalBoardStatusEnum = gameService.makeMove(boardId, 0L, 2L, "Adam", "O");
 
         //then
         Assert.assertEquals(BoardStatusEnum.IN_PROGRESS, tempBoardStatusEnum);

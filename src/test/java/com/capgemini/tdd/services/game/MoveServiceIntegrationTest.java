@@ -35,7 +35,7 @@ public class MoveServiceIntegrationTest
         boardBE = boardService.save(boardBE);
 
         //when
-        MoveBE move= moveService.makeMove(boardBE.getId(), 0L, 0L, "Adam", "X");
+        MoveBE move= moveService.makeMove(boardBE.getId(), 0L, 0L, "Adam", "O");
 
         //then
         Assert.assertNotNull(move.getId());

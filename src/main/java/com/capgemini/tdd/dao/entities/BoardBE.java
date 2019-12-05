@@ -1,5 +1,7 @@
 package com.capgemini.tdd.dao.entities;
 
+import com.capgemini.tdd.core.exceptions.SamePlayersException;
+
 public class BoardBE
 {
     private Long id;
@@ -8,6 +10,9 @@ public class BoardBE
 
     public BoardBE(final UserBE pPlayerOne, final UserBE pPlayerTwo)
     {
+        if (pPlayerOne == pPlayerTwo) {
+            throw new SamePlayersException();
+        }
         playerOne = pPlayerOne;
         playerTwo = pPlayerTwo;
     }

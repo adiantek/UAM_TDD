@@ -63,7 +63,6 @@ public class GameServiceImpl implements GameService
     @Override
     public BoardStatusEnum makeMove(final Long boardId, final Long x, final Long y, final String playerName, final String value)
     {
-
         MatchResultBE existingMatchResultBE = matchResultService.findByBoardId(boardId);
         if(existingMatchResultBE != null)
         {
